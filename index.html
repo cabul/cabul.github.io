@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>Calvin Bulla</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -21,6 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -29,18 +30,41 @@
 </head>
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- Primary Page Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-      </div>
+    <div id="header" class="section">
+      <div class="row">
+        <h3>Calvin Bulla</h3>
+        <p>In the future this will be my personal homepage.</p>
+    </div>
+
+    <div id="contact" class="section">
+      <h4>Send me a mail</h4>
+      <form action="http://formspree.io/calvinbulla+github@gmail.com">
+        <div class="row">
+          <div class="one-half column">
+            <label for=email-input">Your email</label>
+            <input class="u-full-width" placeholder="example@domain.com" id="email-input" type="email" name="_replyto">
+          </div>
+          <div class="one-half column">
+            <label for="subject-input">Subject</label>
+            <input class="u-full-width" placeholder="" id="subject-input" type="text" name="_subject">
+          </div>
+          <label for="message">Message</label>
+          <textarea class="u-full-width" placeholder="Hi Calvin..." id="message"></textarea>
+          <label class="send-copy">
+            <input type="checkbox">
+            <span class="label-body">Send a copy to yourself</span>
+          </label>
+          <input class="button-primary" value="Send Message" type="submit">
+        </div>
+        <input type="text" name="_gotcha" style="display:none" />
+      </form>
     </div>
   </div>
 
 <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
