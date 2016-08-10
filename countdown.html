@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Countdown</title>
+  <meta name="" content="">
+  <meta name="Calvin Bulla" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- ICONS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+<style>
+#counter {
+  left: 0;
+  line-height: 50px;
+  margin: auto;
+  margin-top: -50px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Primary Page Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <p id="counter"></p>
+  </div>
+
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+(function() {
+  var to_date = new Date("Thu Aug 11 2016 09:30:00 GMT+0200 (CEST)");
+  var to_ms = to_date.getTime();
+  var counter = document.getElementById("counter");
+
+  var sec = 1000;
+  var min = sec * 60;
+  var hour = min * 60;
+
+  var to_loop = function() {
+    var cur = new Date();
+    var dt = to_ms - cur.getTime();
+    if (dt < 0) {
+      counter.textContent = "Timeout!";
+    } else {
+      var dh = Math.floor(dt / hour);
+      if (dh < 10) dh = "0" + dh;
+      dt %= hour;
+      var dm = Math.floor(dt / min);
+      if (dm < 10) dm = "0" + dm;
+      dt %= min;
+      var ds = Math.floor(dt / sec);
+      if (ds < 10) ds = "0" + ds;
+      counter.textContent = dh + ":" + dm + ":" + ds;
+    }
+  };
+
+  to_loop();
+  setInterval(to_loop, 500);
+
+
+})();
+</script>
+
+</body>
+</html>
