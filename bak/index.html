@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Countdown</title>
+  <title>Calvin Bulla</title>
   <meta name="" content="">
   <meta name="Calvin Bulla" content="">
 
@@ -24,24 +24,12 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-
-<style>
-#counter {
-  left: 0;
-  line-height: 50px;
-  margin: auto;
-  margin-top: -50px;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  font-size: 50px;
-}
-</style>
 
 </head>
 <body>
@@ -49,46 +37,35 @@
 <!-- Primary Page Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <p id="counter"></p>
+    <div class="header" style="margin-top: 25%">
+      <div class="row">
+        <h3>Calvin Bulla</h3>
+        <p>In the future this will be my personal homepage.</p>
+    </div>
+
+    <div id="contact" class="section">
+      <h4>Send me a mail</h4>
+      <form action="https://formspree.io/calvinbulla+github@gmail.com" method="POST">
+        <div class="row">
+          <div class="one-half column">
+            <label for=email-input">Your email</label>
+            <input class="u-full-width" placeholder="example@domain.com" id="email-input" type="email" name="_replyto">
+          </div>
+          <div class="one-half column">
+            <label for="subject-input">Subject</label>
+            <input class="u-full-width" placeholder="" id="subject-input" type="text" name="_subject">
+          </div>
+          <label for="message">Message</label>
+          <textarea class="u-full-width" placeholder="Hi Calvin..." id="message" name="_message"></textarea>
+          <input class="button-primary" value="Send" type="submit">
+        </div>
+        <input type="text" name="_next" value="pages/thanks.html" style="display:none" />
+        <input type="text" name="_gotcha" style="display:none" />
+      </form>
+    </div>
   </div>
 
 <!-- End Document
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<script>
-(function() {
-  var to_date = new Date("Thu Aug 11 2016 09:30:00 GMT+0200 (CEST)");
-  var to_ms = to_date.getTime();
-  var counter = document.getElementById("counter");
-
-  var sec = 1000;
-  var min = sec * 60;
-  var hour = min * 60;
-
-  var to_loop = function() {
-    var cur = new Date();
-    var dt = to_ms - cur.getTime();
-    if (dt < 0) {
-      counter.textContent = "Timeout!";
-    } else {
-      var dh = Math.floor(dt / hour);
-      if (dh < 10) dh = "0" + dh;
-      dt %= hour;
-      var dm = Math.floor(dt / min);
-      if (dm < 10) dm = "0" + dm;
-      dt %= min;
-      var ds = Math.floor(dt / sec);
-      if (ds < 10) ds = "0" + ds;
-      counter.textContent = dh + ":" + dm + ":" + ds;
-    }
-  };
-
-  to_loop();
-  setInterval(to_loop, 500);
-
-
-})();
-</script>
-
 </body>
 </html>

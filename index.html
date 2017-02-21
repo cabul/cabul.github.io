@@ -1,71 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+---
+layout: default
+---
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Calvin Bulla</title>
-  <meta name="" content="">
-  <meta name="Calvin Bulla" content="">
+<div class="home">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <h1 class="page-heading">Posts</h1>
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-  <!-- ICONS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/custom.css">
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-</head>
-<body>
-
-<!-- Primary Page Layout
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="header" style="margin-top: 25%">
-      <div class="row">
-        <h3>Calvin Bulla</h3>
-        <p>In the future this will be my personal homepage.</p>
-    </div>
-
-    <div id="contact" class="section">
-      <h4>Send me a mail</h4>
-      <form action="https://formspree.io/calvinbulla+github@gmail.com" method="POST">
-        <div class="row">
-          <div class="one-half column">
-            <label for=email-input">Your email</label>
-            <input class="u-full-width" placeholder="example@domain.com" id="email-input" type="email" name="_replyto">
-          </div>
-          <div class="one-half column">
-            <label for="subject-input">Subject</label>
-            <input class="u-full-width" placeholder="" id="subject-input" type="text" name="_subject">
-          </div>
-          <label for="message">Message</label>
-          <textarea class="u-full-width" placeholder="Hi Calvin..." id="message" name="_message"></textarea>
-          <input class="button-primary" value="Send" type="submit">
-        </div>
-        <input type="text" name="_next" value="pages/thanks.html" style="display:none" />
-        <input type="text" name="_gotcha" style="display:none" />
-      </form>
-    </div>
-  </div>
-
-<!-- End Document
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-</body>
-</html>
+</div>
